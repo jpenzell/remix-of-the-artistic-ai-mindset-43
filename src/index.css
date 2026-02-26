@@ -1,0 +1,371 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Default (Wine) Brand Colors - Delicato */
+    --background: 30 8% 95%;
+    --foreground: 345 25% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 345 25% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 345 25% 18%;
+
+    /* Deep burgundy/maroon - Delicato primary */
+    --primary: 345 38% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm gold/amber - Delicato accent */
+    --secondary: 38 75% 45%;
+    --secondary-foreground: 345 25% 18%;
+
+    --muted: 30 10% 88%;
+    --muted-foreground: 345 15% 40%;
+
+    /* Gold accent for highlights */
+    --accent: 38 85% 50%;
+    --accent-foreground: 345 25% 18%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 12% 82%;
+    --input: 30 10% 88%;
+    --ring: 345 38% 32%;
+
+    --radius: 0.875rem;
+    
+    /* Delicato brand gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(345 38% 32%) 0%, hsl(345 35% 25%) 50%, hsl(38 75% 45%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(345 38% 32%) 0%, hsl(345 35% 40%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(38 85% 50%) 0%, hsl(38 75% 40%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(30 8% 98%) 0%, hsl(30 8% 95%) 100%);
+    --shadow-soft: 0 2px 8px -2px hsl(345 38% 32% / 0.12);
+    --shadow-medium: 0 8px 24px -6px hsl(345 38% 32% / 0.18);
+    --shadow-large: 0 16px 48px -12px hsl(345 38% 32% / 0.25);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Penn/Educator Theme - Blue & Red */
+  .theme-educator {
+    --background: 210 20% 96%;
+    --foreground: 215 25% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 18%;
+
+    /* Penn Blue - Primary */
+    --primary: 215 70% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Penn Red - Secondary/Accent */
+    --secondary: 0 75% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 15% 88%;
+    --muted-foreground: 215 15% 40%;
+
+    /* Warm accent for highlights */
+    --accent: 35 90% 50%;
+    --accent-foreground: 215 25% 18%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 82%;
+    --input: 210 15% 88%;
+    --ring: 215 70% 35%;
+
+    /* Penn brand gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(215 70% 35%) 0%, hsl(215 65% 28%) 50%, hsl(0 75% 45%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(215 70% 35%) 0%, hsl(215 65% 45%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(0 75% 45%) 0%, hsl(0 70% 38%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(210 20% 96%) 100%);
+    --shadow-soft: 0 2px 8px -2px hsl(215 70% 35% / 0.12);
+    --shadow-medium: 0 8px 24px -6px hsl(215 70% 35% / 0.18);
+    --shadow-large: 0 16px 48px -12px hsl(215 70% 35% / 0.25);
+  }
+
+  .dark {
+    /* Delicato Dark Mode */
+    --background: 345 20% 10%;
+    --foreground: 30 8% 95%;
+
+    --card: 345 20% 14%;
+    --card-foreground: 30 8% 95%;
+
+    --popover: 345 20% 14%;
+    --popover-foreground: 30 8% 95%;
+
+    --primary: 345 45% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 38 80% 52%;
+    --secondary-foreground: 345 25% 18%;
+
+    --muted: 345 15% 20%;
+    --muted-foreground: 30 10% 65%;
+
+    --accent: 38 90% 55%;
+    --accent-foreground: 345 25% 18%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 345 15% 22%;
+    --input: 345 15% 20%;
+    --ring: 345 45% 45%;
+    
+    /* Delicato brand gradients - dark mode */
+    --gradient-hero: linear-gradient(135deg, hsl(345 45% 45%) 0%, hsl(345 40% 35%) 50%, hsl(38 80% 52%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(345 45% 45%) 0%, hsl(345 40% 50%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(38 90% 55%) 0%, hsl(38 80% 48%) 100%);
+    --sidebar-background: 345 20% 12%;
+    --sidebar-foreground: 30 8% 95%;
+    --sidebar-primary: 345 45% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 345 15% 20%;
+    --sidebar-accent-foreground: 30 8% 95%;
+    --sidebar-border: 345 15% 20%;
+    --sidebar-ring: 345 45% 45%;
+  }
+
+  /* Educator Dark Mode */
+  .dark.theme-educator {
+    --background: 215 25% 10%;
+    --foreground: 210 15% 95%;
+
+    --card: 215 25% 14%;
+    --card-foreground: 210 15% 95%;
+
+    --popover: 215 25% 14%;
+    --popover-foreground: 210 15% 95%;
+
+    --primary: 215 75% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 80% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 20% 20%;
+    --muted-foreground: 210 15% 65%;
+
+    --accent: 35 95% 55%;
+    --accent-foreground: 215 25% 18%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 22%;
+    --input: 215 20% 20%;
+    --ring: 215 75% 50%;
+    
+    /* Penn brand gradients - dark mode */
+    --gradient-hero: linear-gradient(135deg, hsl(215 75% 50%) 0%, hsl(215 70% 40%) 50%, hsl(0 80% 55%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(215 75% 50%) 0%, hsl(215 70% 55%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(0 80% 55%) 0%, hsl(0 75% 48%) 100%);
+    --sidebar-background: 215 25% 12%;
+    --sidebar-foreground: 210 15% 95%;
+    --sidebar-primary: 215 75% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 20% 20%;
+    --sidebar-accent-foreground: 210 15% 95%;
+    --sidebar-border: 215 20% 20%;
+    --sidebar-ring: 215 75% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  p, li, td, th, div {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+}
+
+@layer utilities {
+  /* Slide Transition System */
+  .slide-transition-container {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+  }
+
+  .slide-content {
+    width: 100%;
+    will-change: transform, opacity, filter;
+    transition: none;
+  }
+
+  /* Exit animations - slide out with blur and scale */
+  .slide-exit-left {
+    animation: exit-left 0.3s cubic-bezier(0.4, 0, 1, 1) forwards;
+  }
+
+  .slide-exit-right {
+    animation: exit-right 0.3s cubic-bezier(0.4, 0, 1, 1) forwards;
+  }
+
+  /* Enter animations - slide in with clarity and scale */
+  .slide-enter-right {
+    animation: enter-right 0.4s cubic-bezier(0, 0, 0.2, 1) forwards;
+  }
+
+  .slide-enter-left {
+    animation: enter-left 0.4s cubic-bezier(0, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes exit-left {
+    0% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-6%) scale(0.96);
+      filter: blur(4px);
+    }
+  }
+
+  @keyframes exit-right {
+    0% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(6%) scale(0.96);
+      filter: blur(4px);
+    }
+  }
+
+  @keyframes enter-right {
+    0% {
+      opacity: 0;
+      transform: translateX(4%) scale(0.98);
+      filter: blur(3px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes enter-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-4%) scale(0.98);
+      filter: blur(3px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  /* Legacy animations preserved */
+  .animate-slide-in {
+    animation: slide-in 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .dark .glass-effect {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Horizontal scrolling ticker animation */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
